@@ -1,0 +1,41 @@
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+body { font: 22px system-ui, sans-serif; margin: 0; padding: 24px; background: rgb(244, 247, 252); color: rgb(20, 24, 40); }
+.contenedor { max-width: 960px; margin: 0 auto; }
+.intro { font-size: 1.1rem; }
+.tarjeta { background: #fff; border-radius: 14px; padding: 28px; margin-top: 28px; box-shadow: 0 2px 10px rgba(0, 0, 0, .1); }
+.fila { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-end; }
+.campo { flex: 1 1 220px; }
+label { display: block; margin-bottom: 8px; font-weight: 600; }
+input, select, button { font: inherit; padding: 16px; width: 100%; border-radius: 10px; }
+input, select { border: 2px solid rgb(150, 160, 190); background: #fff; color: inherit; }
+input:focus, select:focus, button:focus-visible { outline: 4px solid rgb(250, 190, 40); outline-offset: 2px; }
+button { margin-top: 24px; font-size: 1.3rem; font-weight: 700; }
+
+/* ===== Personalización (zona de integración de personalizacion.css) ===== */
+/* Paleta elegida: azul RGB(30, 64, 175). Texto blanco sobre azul: contraste ≈ 8.7:1 (AAA). */
+:root {
+  --color-principal: rgb(30, 64, 175);
+  --color-texto-sobre-principal: rgb(255, 255, 255);
+  --color-fondo-resultado: rgb(238, 243, 248);
+}
+h1, h2 { color: var(--color-principal); }
+button { background: var(--color-principal); color: var(--color-texto-sobre-principal); border: 0; cursor: pointer; }
+button:hover { background: rgb(23, 49, 135); }
+button:active { transform: scale(.98); }
+.pantalla {
+  background: var(--color-fondo-resultado);
+  border-left: 8px solid var(--color-principal);
+  border-radius: 8px;
+  padding: 22px;
+  margin-top: 24px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  min-height: 72px;
+  word-break: break-word;
+}
+.pantalla.error { border-left-color: rgb(185, 28, 28); color: rgb(153, 27, 27); background: rgb(254, 242, 242); }
+
+/* Etiqueta modificada: <label for="a"> pasó de "Primer dato" a "Primer valor".
+   Su tamaño se cambia con CSS (de 22px heredado a 1.5rem). */
+label[for="a"] { font-size: 1.5rem; color: var(--color-principal); }
